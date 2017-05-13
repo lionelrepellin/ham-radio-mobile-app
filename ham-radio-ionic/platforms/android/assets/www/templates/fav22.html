@@ -1,0 +1,87 @@
+<ion-view title="Cours de lecture au son FAV22" id="page2" class=" ">
+    <ion-content padding="true" class="has-header">
+    	<h4 class="title">Organisation</h4>
+    	<p>Les émetteurs se trouvent à Vernon (27). En fonction de la propagation, 1, 5 ou 10 KW sont utilisés.</p>
+
+    	<h4 class="title">Horaires (heures locales)</h4>
+    	<ul>
+    		<li>Deux fois par jour. Semaine de 10h30 à 11h00 et de 13h30 à 14h00.</li>
+			<li>Samedi de 09h00 à 9h30 et de 10h20 à 10h55.</li>
+    		<li>Dimanche de 09h00 à 09h30 et de 10h20 à 10h55.</li>
+    	</ul>
+
+		<h4 class="title">Fréquences</h4>
+		<p>3881 kHz et 6825 kHz (simultanément)</p>
+
+		<h4 class="title">Vitesses</h4>
+		<ul>
+			<li>Lundi 420 groupes/h</li>
+			<li>Mardi 600 groupes/h</li>
+			<li>Mercredi 720 groupes/h</li>
+			<li>Jeudi 840 groupes/h</li>
+			<li>Vendredi 960 groupes/h</li>
+			<li>Samedi et Dimanche 420 groupes/h : 9h - 9h30</li>
+			<li>Samedi et Dimanche 600 groupes/h : 10h20 - 10h40</li>
+			<li>Samedi et Dimanche 1200 groupes/h : 10h40 - 10h55</li>
+		</ul>
+		<p>Les vitesses de transmission sont légèrement supérieures à celles annoncées.</p>
+
+		<h4 class="title">Rappel</h4>
+		<ul>
+			<li>que les émetteurs FAV 22 (1, 5 ou 10 kW) sont situés dans le département 27<li>
+			<li>que le cycle complet de cours comporte 162 leçons différentes (120 pour la semaine + 42 pour les dimanches)<li>
+			<li>que les leçons sont différentes chaque jour<li>
+			<li>que l'émission de l'après-midi est la répétition de celle du matin<li>
+			<li>que les émissions du samedi et du dimanche matin sont destinées spécialement aux radioamateurs et comportent, en codé, les signes de ponctuation<li>
+			<li>qu'au début de chaque leçon, l'indication de la vitesse et le N° de la leçon sont indiqués<li>
+			<li>que les diffusions sont normalement assurées en juillet et août ainsi que tous les jour fériés<li>
+		</ul>
+
+		<h4 class="title">Composition des leçons</h4>
+		<ul>
+			<li>Du lundi au vendredi inclus : codé - clair - codé - clair</li>
+			<li>Samedi et dimanche : 9 heures = codé - clair. codé - clair. codé - clair</li>
+		</ul>
+
+		Modes: <br />
+		<p ng-repeat="mode in modes" >
+			<a ng-click="findByMode(mode)">{{ mode }}</a>
+		</p>
+
+		<div class="list">
+			<div class="item item-divider">
+				<!-- Leçon choisie : {{ categorySelected.category.day }} - {{ categorySelected.category.speed }} groupe/h -->
+				Choisissez une leçon :
+			</div>
+			<ion-radio ng-repeat="category in categories"
+				ng-value="category"
+				ng-model="categorySelected.category"
+				ng-change="findByCategory(category)"
+				name="server-side">
+				{{ category.day }} - {{ category.speed }} groupe/h
+			</ion-radio>
+		</div>
+
+		<!-- solutions can be showed and hided -->
+		<div ng-repeat="solution in solutions track by $index">
+			<button class="button button-block button-balanced" ng-click="showSolution('{{ $index }}')" ng-show="!solution.visible" >
+			  {{ formatTitle(solution.lesson) }}
+			</button>
+			<div ng-show="solution.visible" >
+				<h5>{{ formatTitle(solution.lesson) }}</h5>
+				<p style="text-align:justify;" ng-class="isEncrypted('{{ solution.lesson }}') ? 'encrypted-text': ''" >{{ solution.solved }}</p>
+				<a class="button icon-left ion-arrow-shrink button-clear button-positive" ng-click="hideSolution('{{ $index }}')" >Fermer</a>
+			</div>
+		</div>
+
+		<h4 class="title">Notes</h4>
+		<ul>
+			<li>$ représente AS</li>
+			<li>% représente VA</li>
+			<li>= représente = (séparation)</li>
+			<li># représente AR</li>
+		</ul>
+		<br />
+		<p>Source: Réseau des Emetteurs Français</p>
+    </ion-content>
+</ion-view>

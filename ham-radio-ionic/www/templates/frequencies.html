@@ -1,0 +1,9 @@
+<ion-view title="{{ title }}" id="page2" class=" ">
+    <ion-content padding="true" class="has-header">
+        <h4 class="title text-center">{{ header }}</h4>
+        <ul class="list">
+        	<li ng-repeat="frequency in frequencies" class="item" >{{ frequency }} kHz</li>
+        </ul>
+        <p ng-if="remark != null" ><strong>Remarque :</strong> {{ remark }}</p>
+    </ion-content>
+</ion-view>

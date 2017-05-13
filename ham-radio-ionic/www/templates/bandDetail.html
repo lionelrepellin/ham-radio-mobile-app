@@ -1,0 +1,43 @@
+<ion-view title="Détail pour le {{ details.label }}" id="bandDetailPage" class="">
+    <ion-content padding="true" class="has-header">
+        
+        <div class="my-legend">
+            <div class="legend-scale">
+                <ul class="legend-labels">
+                    <li ng-repeat="freq in details.frequencies">
+                        <p><span style="background:{{freq.mode.background}};"></span>de {{ freq.start }} à {{ freq.end }} kHz<br />{{ freq.mode.label }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <table></table>
+
+
+        <!--<table border="1" >
+        </table>-->
+                
+        <!--<ul>
+            <li ng-repeat="freq in details.frequencies">from {{ freq.start }} to {{ freq.end }} kHz - {{ freq.mode.label }}</li>
+        </ul>-->
+        <!--<p ng-if="details.psk31Enabled">PSK31 : {{ details.psk31 }} kHz</p>-->
+        
+        <div ng-if="!isEmpty(details.qrp)">
+            <p>Fréquences QRP :</p>
+            <ul>
+                <li ng-repeat="qrp in details.qrp">{{ qrp.frequency }} - {{ qrp.mode.label }}</li>
+            </ul>
+        </div>
+
+        <div ng-if="!isEmpty(details.emergency)">
+            <p>Fréquences d'Urgence :</p>
+            <ul>
+                <li ng-repeat="emergency in details.emergency">{{ emergency.frequency }} kHz - {{ emergency.organization.label }}</li>
+            </ul>
+        </div>
+
+        <div ng-if="!isEmpty(details.remarks)">
+            Remarques : <p ng-bind-html="getFormattedList(details.remarks)"></p>
+        </div>
+    </ion-content>
+</ion-view>

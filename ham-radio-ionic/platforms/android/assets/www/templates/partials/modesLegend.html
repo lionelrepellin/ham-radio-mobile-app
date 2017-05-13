@@ -1,0 +1,8 @@
+<div class="my-legend">
+<div class="legend-scale">
+  <ul class="legend-labels">
+    <li ng-repeat="mode in modes" ng-if="mode.bandwidth != null"><span style="background:{{mode.background}};"></span>{{mode.label}} - {{mode.bandwidth}}Hz</li>
+      <li ng-repeat="mode in modes" ng-if="mode.bandwidth == null"><span style="background:{{mode.background}};"></span>{{mode.label}}</li>
+  </ul>
+</div>
+</div>

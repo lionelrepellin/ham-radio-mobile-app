@@ -1,0 +1,33 @@
+<ion-view title="Contests SSB & CW" id="page2" class=" ">
+    <ion-content padding="true" class="has-header">
+    	<h4 class="title text-center">Segments préférés SSB</h4>
+        <ul class="list">
+        	<li ng-repeat="ssb in ssbContests" class="item" ><strong>{{ ssb.label }}m</strong>
+        	<ul>
+        		<li ng-repeat="ctst in ssb.contests" >{{ ctst.start }} kHz - {{ ctst.end }} kHz</li>
+        	</ul>
+        	</li>
+        </ul>
+
+        <h4 class="title text-center">Segments préférés CW</h4>
+		<ul class="list">
+        	<li ng-repeat="cw in cwContests" class="item" ><strong>{{ cw.label }}m</strong>
+        	<ul>
+        		<li ng-repeat="ctst in cw.contests" >{{ ctst.start }} kHz - {{ ctst.end }} kHz</li>
+        	</ul>
+        	</li>
+        </ul>
+
+        <p><strong>Remarque :</strong></p>
+        <ul class="ul-list">
+            <li>Les activités de concours ne peuvent avoir lieu sur les bandes 10, 18, 24 MHz.</li>
+            <li>Il est recommandé aux radioamateurs ne participant pas aux concours d’utiliser les bandes de fréquences 10, 18, 24 MHz pendant les plus grands concours internationaux. (Recommandation DV05_C4_Rec 07).</li>
+            <li>Les sociétés membres de l’IARU sont encouragées à publier clairement les segments à utiliser dans les règlements et que ces segments soient en accord avec les plans de bande IARU (SC11_C4_02).</li>
+            <li>Lors de la conférence de Sun City (Août 2011) le segment préféré concours CW 7,000-7,025 a été supprimé. Les sociétés devraient encourager les organisateurs de concours à inclure une règle qui restreigne l’activité concours dans une gamme de fréquence limitée, à l’intérieur de l’allocation CW.</li>
+            <li>Le choix du segment de fréquence est laissé à la discrétion des  organisateurs de concours, mais devrait tenir compte du niveau d’activité escompté et devrait montrer de la considération pour ceux qui ne font pas le concours (SC11_C4_O5).</li>
+            <li>Dans le « IARU R1 HF Manager’s Handbook » au chapitre 7.1.2 « Guidelines for HF contests » (directives pour les concours HF), la catégorie SO (single op.) est modifiée comme suit « Une station SO est une station dotée d’un seul opérateur ne transmettant pas plus d’un signal sur une seule fréquence RUN à chaque instant (SC11_C4_03).</li>
+            <li>L’ IARU Région 1 approuve le « DX Code of Conduct » (code de conduite en trafic DX ) et encourage ses sociétés membres à le publier et le recommander à leurs membres (SC11-C4_06). </li>
+        </ul>
+
+    </ion-content>
+</ion-view>

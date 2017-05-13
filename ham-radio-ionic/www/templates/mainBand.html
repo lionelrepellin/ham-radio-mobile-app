@@ -1,0 +1,9 @@
+<ion-view title="Plan de bande {{ parameter.label }}" id="mainBandPage" class=" " >
+    <ion-content padding="true" class="has-header">
+    	<div ng-include="'templates/partials/modesLegend.html'" >
+        </div>
+        <div ng-repeat="subBand in subBands">
+	    	<div ng-include="'templates/partials/mainBands.html'" />
+	    </div>
+    </ion-content>
+</ion-view>

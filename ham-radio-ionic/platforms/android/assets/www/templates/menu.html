@@ -1,0 +1,37 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-positive">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu21">
+        <ion-header-bar class="bar-stable">
+            <div class="title">Menu</div>
+        </ion-header-bar>
+        <ion-content padding="false" class="side-menu-left has-header">
+            <ion-list id="menu-list1" class=" ">
+                <ion-item id="menu-list-item1" ui-sref="menu.bandPlan" menu-close="" class="" >Plan de bandes</ion-item>
+                <ion-item id="menu-list-item2" ui-sref="menu.qrp" menu-close="" class="" >QRP SSB & CW</ion-item>
+                <ion-item id="menu-list-item3" ui-sref="menu.qrss" menu-close="" class="" >QRSS</ion-item>
+                <ion-item id="menu-list-item4" ui-sref="menu.sstv" menu-close="" class="" >SSTV</ion-item>
+                <ion-item id="menu-list-item5" ui-sref="menu.digitalVoice" menu-close="" class="" >Voix numérique</ion-item>
+                <ion-item id="menu-list-item6" ui-sref="menu.psk31" menu-close="" class="" >PSK31</ion-item>
+                <ion-item id="menu-list-item7" ui-sref="menu.jt9" menu-close="" class="" >JT9</ion-item>
+                <ion-item id="menu-list-item8" ui-sref="menu.jt65" menu-close="" class="" >JT65</ion-item>
+                <ion-item id="menu-list-item9" ui-sref="menu.contests" menu-close="" class="" >Contests SSB & CW</ion-item>
+                <ion-item id="menu-list-item12" ui-sref="menu.fav22" menu-close="" class="" >Cours CW FAV22</ion-item>
+                <ion-item id="menu-list-item13" ui-sref="menu.uft" menu-close="" class="" >UFT</ion-item>
+                <ion-item class="item-icon-right" id="menu-list-item10" ui-sref="menu.emergency" menu-close="">Communications d'urgence
+                    <i class="icon ion-alert"></i>
+                </ion-item>
+                <ion-item id="menu-list-item15" ui-sref="menu.distanceCalculator" menu-close="" class="" >Calcul de distance</ion-item>
+                <ion-item id="menu-list-item14" ui-sref="menu.rstCode" menu-close="" class="" >Code RST</ion-item>
+                <ion-item id="menu-list-item11" ui-sref="menu.about" menu-close="" class="">A propos...</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

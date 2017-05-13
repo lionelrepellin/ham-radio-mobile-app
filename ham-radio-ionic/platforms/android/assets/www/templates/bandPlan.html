@@ -1,0 +1,9 @@
+<ion-view title="Gammes de fréquences" id="page1" class=" ">
+    <ion-content padding="true" class="has-header">
+        <!-- <p id="bandPlan-markdown1" style="color:#000000;font-size:16px;" class=" ">Show the band plan from VLH to THF</p> -->
+        <h4 class="title text-center" style="margin-bottom:40px;">Sélectionner la gamme de fréquences</h4>
+        <div ng-repeat="band in bands">
+            <button class="button button-block button-stable" style="margin-bottom:10px;" ng-click="showMainBandDetail(band)" ui-sref="menu.mainBand" >{{band.label}} - {{band.longLabel}}</button>
+        </div>
+    </ion-content>
+</ion-view>
